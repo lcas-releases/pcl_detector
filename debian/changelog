@@ -1,9 +1,0 @@
-ros-kinetic-object3d-detector (0.0.1-0xenial) xenial; urgency=high
-
-  * extracted from original repo
-  * Initial commit
-  * Contributors: Marc Hanheide
-
- -- Marc Hanheide <marc@hanheide.net>  Wed, 05 Sep 2018 23:00:00 -0000
-
-
