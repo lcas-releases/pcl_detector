@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>object3d_detector</name>
-  <version>0.0.2</version>
+  <version>0.0.3</version>
   <description>3D object detection in scenes scanned by 3D LiDAR.</description>
   <maintainer email="marc@hanheide.net">Marc Hanheide</maintainer>
   <author email="zyan@lincoln.ac.uk">Zhi Yan</author>

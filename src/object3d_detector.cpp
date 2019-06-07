@@ -43,6 +43,7 @@ private:
   ros::Publisher pose_array_pub_;
   
   std::string frame_id_;
+  std::string lidar_topic_;
   bool print_fps_;
   float z_limit_min_;
   float z_limit_max_;
@@ -75,19 +76,21 @@ public:
 };
 
 Object3dDetector::Object3dDetector() {
-  point_cloud_sub_ = node_handle_.subscribe<sensor_msgs::PointCloud2>("velodyne_points", 1, &Object3dDetector::pointCloudCallback, this);
   
   ros::NodeHandle private_nh("~");
   marker_array_pub_ = private_nh.advertise<visualization_msgs::MarkerArray>("markers", 100);
   pose_array_pub_ = private_nh.advertise<geometry_msgs::PoseArray>("poses", 100);
   
-  private_nh.param<std::string>("frame_id", frame_id_, "velodyne");
+  // private_nh.param<std::string>("frame_id", frame_id_, "velodyne");
   private_nh.param<bool>("show_fps", print_fps_, true);
   private_nh.param<float>("z_limit_min", z_limit_min_, -0.8);
   private_nh.param<float>("z_limit_max", z_limit_max_, 2.0);
   private_nh.param<int>("cluster_size_min", cluster_size_min_, 5);
   private_nh.param<int>("cluster_size_max", cluster_size_max_, 30000);
   private_nh.param<float>("human_probability", human_probability_, 0.7);
+  private_nh.param<std::string>("lidar_topic", lidar_topic_, "velodyne_points");
+
+  point_cloud_sub_ = node_handle_.subscribe<sensor_msgs::PointCloud2>(lidar_topic_, 1, &Object3dDetector::pointCloudCallback, this);
   
   /****** load a pre-trained svm model ******/
   private_nh.param<std::string>("model_file_name", model_file_name_, "");
@@ -137,6 +140,8 @@ Object3dDetector::~Object3dDetector() {
 
 int frames; clock_t start_time; bool reset = true;//fps
 void Object3dDetector::pointCloudCallback(const sensor_msgs::PointCloud2::ConstPtr& ros_pc2) {
+
+  frame_id_ = ros_pc2->header.frame_id;
   if(print_fps_)if(reset){frames=0;start_time=clock();reset=false;}//fps
   
   pcl::PointCloud<pcl::PointXYZI>::Ptr pcl_pc(new pcl::PointCloud<pcl::PointXYZI>);
