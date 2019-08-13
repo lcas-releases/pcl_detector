@@ -1,0 +1,26 @@
+ros-kinetic-object3d-detector (0.0.3-2xenial) xenial; urgency=high
+
+  * Merge pull request #3 <https://github.com/LCAS/pcl_detector/issues/3> from scosar/master
+    Input parameter to set lidar topic
+  * Merge remote-tracking branch 'upstream/master'
+  * Included a parameter to set input lidar topic
+  * Contributors: Serhan Cosar, scosar
+
+ -- Marc Hanheide <marc@hanheide.net>  Fri, 07 Jun 2019 00:00:00 -0000
+
+ros-kinetic-object3d-detector (0.0.2-2xenial) xenial; urgency=high
+
+  * New model files compatible with Ouster OS1-16
+  * Contributors: Serhan Cosar
+
+ -- Marc Hanheide <marc@hanheide.net>  Tue, 09 Apr 2019 00:00:00 -0000
+
+ros-kinetic-object3d-detector (0.0.1-2xenial) xenial; urgency=high
+
+  * extracted from original repo
+  * Initial commit
+  * Contributors: Marc Hanheide
+
+ -- Marc Hanheide <marc@hanheide.net>  Thu, 06 Sep 2018 00:00:00 -0000
+
+
