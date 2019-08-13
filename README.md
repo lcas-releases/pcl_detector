@@ -1,3 +1,26 @@
+## pcl_detector (kinetic) - 0.0.3-2
+
+The packages in the `pcl_detector` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release -y --no-web -t kinetic -r kinetic pcl_detector` on `Tue, 13 Aug 2019 10:52:49 -0000`
+
+The `object3d_detector` package was released.
+
+Version of package(s) in repository `pcl_detector`:
+
+- upstream repository: https://github.com/LCAS/pcl_detector.git
+- release repository: https://github.com/lcas-releases/pcl_detector.git
+- rosdistro version: `0.0.3-1`
+- old version: `0.0.3-1`
+- new version: `0.0.3-2`
+
+Versions of tools used:
+
+- bloom version: `0.8.0`
+- catkin_pkg version: `0.4.13`
+- rosdep version: `0.15.2`
+- rosdistro version: `0.7.4`
+- vcstools version: `0.1.42`
+
+
 ## pcl_detector (kinetic) - 0.0.3-1
 
 The packages in the `pcl_detector` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release -y --no-web -t kinetic -r kinetic pcl_detector` on `Fri, 07 Jun 2019 10:11:26 -0000`
